@@ -25,7 +25,7 @@ const path = require('node:path');
 const util = require('node:util');
 const { createRequire } = require('node:module');
 const { fileURLToPath } = require('node:url');
-const { ModuleRef } = require('cooper');
+const { ModuleRef } = require('@joetjen/cooper');
 const CooperConfigError = require('./error.cjs');
 
 /** The key a top-level block states its secret handling under. */

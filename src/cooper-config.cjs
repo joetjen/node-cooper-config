@@ -4,7 +4,7 @@
  * @fileoverview `cooper-config`: an application's CASC configuration,
  * loaded once at startup with `cooper`, and the functions it is read with.
  *
- * **Eager only.** `load()` (or the `cooper-config/register` preload)
+ * **Eager only.** `load()` (or the `@joetjen/cooper-config/register` preload)
  * reads the whole configuration once, as the program starts, and stores
  * it process-wide; `get`/`require`/`has`/`all` only ever read what was
  * stored. Nothing is loaded lazily on first access, reloaded, or watched:
@@ -14,7 +14,7 @@
  * `cooper_prx` for Praxis -- do too.
  *
  * ```js
- * import { load, get } from 'cooper-config';
+ * import { load, get } from '@joetjen/cooper-config';
  *
  * load();                                    // config/config.casc under the project root
  * const size = get('database.pool.size', 10);
@@ -65,7 +65,7 @@ function current() {
   if (stored === null) {
     throw new CooperConfigError(
       'the configuration has not been loaded: call load() from cooper-config once at startup, before anything reads it, ' +
-        'or start node with --import cooper-config/register (--require cooper-config/register for CommonJS)',
+        'or start node with --import @joetjen/cooper-config/register (--require @joetjen/cooper-config/register for CommonJS)',
     );
   }
   return stored;

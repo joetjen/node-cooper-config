@@ -1,7 +1,10 @@
 {
-  "name": "cooper-config",
+  "name": "@joetjen/cooper-config",
   "version": "0.1.0",
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "Jan Oetjen <joetjen.riveting388@passmail.net> (http://joetjen.net)",
   "description": "Loads an application's CASC configuration once, at startup, with cooper, and gives the application functions to read it -- typed literals untagged, secrets handled per block.",
   "homepage": "https://github.com/joetjen/node-cooper-config",
@@ -33,7 +36,7 @@
     "src": "./src"
   },
   "dependencies": {
-    "cooper": "file:../node-cooper"
+    "@joetjen/cooper": "file:../node-cooper"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",

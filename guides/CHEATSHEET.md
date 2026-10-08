@@ -3,13 +3,13 @@
 ## Startup (once, eagerly)
 
 ```sh
-node --import cooper-config/register app.js     # ESM
-node --require cooper-config/register app.js    # CJS
+node --import @joetjen/cooper-config/register app.js     # ESM
+node --require @joetjen/cooper-config/register app.js    # CJS
 ```
 
 ```js
-import 'cooper-config/register';                // as the first import
-import { load } from 'cooper-config';
+import '@joetjen/cooper-config/register';                // as the first import
+import { load } from '@joetjen/cooper-config';
 load(options?);                                  // or by hand, with options
 ```
 

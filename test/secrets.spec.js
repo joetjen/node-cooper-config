@@ -1,7 +1,7 @@
 import path from 'node:path';
 import { expect } from 'chai';
 import fc from 'fast-check';
-import { loadStringSync, Secret } from 'cooper';
+import { loadStringSync, Secret } from '@joetjen/cooper';
 import { load, get, all, convert, CooperConfigError } from '../src/cooper-config.js';
 import { HEADER, project, cleanup, hermetic } from './support/project.js';
 
