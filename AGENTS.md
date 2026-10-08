@@ -3,7 +3,7 @@
 Instructions for AI agents working in this Node.js codebase.
 
 `cooper-config` loads an application's CASC configuration once, at
-startup, with [`cooper`](../node-cooper) (`node-cooper`), and gives the
+startup, with [`@joetjen/cooper`](https://github.com/joetjen/node-cooper) (`node-cooper`), and gives the
 application functions to read it. It is the Node counterpart of the
 Elixir [`cooper_config`](https://github.com/joetjen/cooper_config) and
 the Praxis `cooper_prx`. Those two are the references for behaviour: the
@@ -81,9 +81,8 @@ the code that makes it.
 
 ## Dependency boundaries
 
-- `cooper` is the only runtime dependency, and it stays that way. It is
-  unpublished, so `package.json` depends on it as `file:../node-cooper`.
-  CI checks it out next to this repository.
+- `@joetjen/cooper` is the only runtime dependency, and it stays that
+  way. It comes from npm.
 
 ## Git workflow, commits, versioning
 

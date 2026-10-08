@@ -3,6 +3,9 @@ import { createRequire } from 'node:module';
 // Named `requireCjs`, not `require`: this module exports a `require` of
 // its own.
 const requireCjs = createRequire(import.meta.url);
+// Typed by hand: TypeScript types a call it recognises as `require`, and
+// this one is not named that.
+/** @type {import('./cooper-config.cjs')} */
 const api = requireCjs('./cooper-config.cjs');
 
 /** @type {string} */

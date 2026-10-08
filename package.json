@@ -10,15 +10,28 @@
   "homepage": "https://github.com/joetjen/node-cooper-config",
   "type": "module",
   "main": "./src/cooper-config.cjs",
+  "types": "./types/cooper-config.d.cts",
   "exports": {
     ".": {
-      "import": "./src/cooper-config.js",
-      "require": "./src/cooper-config.cjs",
+      "import": {
+        "types": "./types/cooper-config.d.ts",
+        "default": "./src/cooper-config.js"
+      },
+      "require": {
+        "types": "./types/cooper-config.d.cts",
+        "default": "./src/cooper-config.cjs"
+      },
       "default": "./src/cooper-config.cjs"
     },
     "./register": {
-      "import": "./src/register.js",
-      "require": "./src/register.cjs",
+      "import": {
+        "types": "./types/register.d.ts",
+        "default": "./src/register.js"
+      },
+      "require": {
+        "types": "./types/register.d.cts",
+        "default": "./src/register.cjs"
+      },
       "default": "./src/register.cjs"
     },
     "./package.json": "./package.json"
@@ -28,6 +41,7 @@
   },
   "files": [
     "src",
+    "types",
     "bin",
     "guides"
   ],
@@ -36,16 +50,16 @@
     "src": "./src"
   },
   "dependencies": {
-    "@joetjen/cooper": "file:../node-cooper"
+    "@joetjen/cooper": "^0.1.1"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",
     "auto-changelog": "^2.6.0",
     "chai": "^6.2.2",
-    "fast-check": "^3.23.0",
-    "mocha": "^11.7.6",
+    "fast-check": "^4.10.2",
+    "mocha": "^12.0.3",
     "typedoc": "^0.28.20",
-    "typescript": "^5.7.0"
+    "typescript": "~6.0"
   },
   "engines": {
     "node": ">=20.0.0",
@@ -54,10 +68,12 @@
   "scripts": {
     "test": "npx mocha --recursive test/",
     "autotest": "npx mocha --recursive --watch test/",
-    "typecheck": "npx tsc --checkJs --noEmit",
+    "build:types": "rm -rf types && npx tsc -p tsconfig.build.json",
+    "typecheck": "npx tsc --checkJs --noEmit && npm run build:types && npx tsc --noEmit -p test/types",
     "precommit": "npm run typecheck && npm test",
     "docs": "npx typedoc",
-    "version": "npx auto-changelog --package --template keepachangelog && git add CHANGELOG.md"
+    "version": "npx auto-changelog --package --template keepachangelog && git add CHANGELOG.md",
+    "prepack": "npm run build:types"
   },
   "repository": {
     "type": "git",

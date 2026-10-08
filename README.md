@@ -49,7 +49,9 @@ get('database.pool.size', 5);                // 10, or 5 if absent
 npm install @joetjen/cooper-config
 ```
 
-`cooper` comes along as a dependency. You need Node.js 20 or later.
+`@joetjen/cooper` comes along as a dependency. You need Node.js 20 or
+later. TypeScript declarations ship with the package, for `import` and
+`require` alike.
 `require('@joetjen/cooper-config')` works the same way as `import`.
 
 ## Startup: loaded once, eagerly
