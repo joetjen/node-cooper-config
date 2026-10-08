@@ -11,8 +11,11 @@ Published as **`@joetjen/cooper-config`**, beside `@joetjen/cooper`.
 
 ### Added
 
+- TypeScript declarations, generated from the JSDoc when the package is
+  packed, for both entry points and both module systems; `test/types`
+  compiles an ES-module and a CommonJS application against them.
 - Project scaffold mirroring `node-cooper`: `package.json` (Node.js 20+,
-  `cooper` as the only runtime dependency), the dual CJS/ESM entry-point
+  `@joetjen/cooper` ^0.1.1 from npm as the only runtime dependency), the dual CJS/ESM entry-point
   convention, Mocha/Chai/fast-check tests, `tsc --checkJs`
   type-checking, TypeDoc API docs, GitHub Actions for CI, docs and a
   monthly dependency audit, and the Apache License 2.0.

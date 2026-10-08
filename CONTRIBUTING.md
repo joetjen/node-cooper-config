@@ -5,13 +5,8 @@ need to know before opening an issue or a pull request.
 
 ## Getting started
 
-`cooper` is not published yet, so check out
-[`node-cooper`](https://github.com/joetjen/node-cooper) next to this
-repository first. `package.json` depends on it as `file:../node-cooper`.
-
 ```sh
-git clone <node-cooper repository> node-cooper
-git clone <this repository> node-cooper-config
+git clone https://github.com/joetjen/node-cooper-config.git
 cd node-cooper-config
 npm install
 npm test

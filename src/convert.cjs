@@ -140,7 +140,7 @@ function block(value, policy, at) {
  * value is converted *first*: a secret holding a byte size is unusual but
  * not forbidden, and what the application's type receives is a value, not
  * a cooper literal.
- * @param {Secret} value
+ * @param {InstanceType<typeof Secret>} value
  * @param {import('./secrets.cjs').Policy} policy
  * @param {string[]} at
  * @returns {unknown}
