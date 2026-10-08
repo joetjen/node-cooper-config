@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    name: Node ${{ matrix.node }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: ["20", "22", "24"]
+    steps:
+      - uses: actions/checkout@v4
+
+      # `cooper` is unpublished, so package.json depends on it as
+      # `file:../node-cooper`; put a checkout of it where that points.
+      - name: Check out node-cooper next to this repository
+        uses: actions/checkout@v4
+        with:
+          repository: joetjen/node-cooper
+          path: node-cooper
+
+      - name: Move node-cooper beside this repository
+        run: mv node-cooper ../node-cooper
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Precommit
+        run: npm run precommit
+
+      - name: Verify package assembles (npm pack)
+        run: npm pack --dry-run
