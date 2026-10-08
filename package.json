@@ -1,0 +1,93 @@
+{
+  "name": "@joetjen/cooper-config",
+  "version": "0.1.0",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Jan Oetjen <joetjen.riveting388@passmail.net> (http://joetjen.net)",
+  "description": "Loads an application's CASC configuration once, at startup, with cooper, and gives the application functions to read it -- typed literals untagged, secrets handled per block.",
+  "homepage": "https://github.com/joetjen/node-cooper-config",
+  "type": "module",
+  "main": "./src/cooper-config.cjs",
+  "types": "./types/cooper-config.d.cts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./types/cooper-config.d.ts",
+        "default": "./src/cooper-config.js"
+      },
+      "require": {
+        "types": "./types/cooper-config.d.cts",
+        "default": "./src/cooper-config.cjs"
+      },
+      "default": "./src/cooper-config.cjs"
+    },
+    "./register": {
+      "import": {
+        "types": "./types/register.d.ts",
+        "default": "./src/register.js"
+      },
+      "require": {
+        "types": "./types/register.d.cts",
+        "default": "./src/register.cjs"
+      },
+      "default": "./src/register.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "cooper-config": "./bin/cooper-config.cjs"
+  },
+  "files": [
+    "src",
+    "types",
+    "bin",
+    "guides"
+  ],
+  "license": "Apache-2.0",
+  "directories": {
+    "src": "./src"
+  },
+  "dependencies": {
+    "@joetjen/cooper": "^0.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "auto-changelog": "^2.6.0",
+    "chai": "^6.2.2",
+    "fast-check": "^4.10.2",
+    "mocha": "^12.0.3",
+    "typedoc": "^0.28.20",
+    "typescript": "~6.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=9.0.0"
+  },
+  "scripts": {
+    "test": "npx mocha --recursive test/",
+    "autotest": "npx mocha --recursive --watch test/",
+    "build:types": "rm -rf types && npx tsc -p tsconfig.build.json",
+    "typecheck": "npx tsc --checkJs --noEmit && npm run build:types && npx tsc --noEmit -p test/types",
+    "precommit": "npm run typecheck && npm test",
+    "docs": "npx typedoc",
+    "version": "npx auto-changelog --package --template keepachangelog && git add CHANGELOG.md",
+    "prepack": "npm run build:types"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/joetjen/node-cooper-config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/joetjen/node-cooper-config/issues",
+    "email": "joetjen.riveting388@passmail.net"
+  },
+  "keywords": [
+    "casc",
+    "cooper",
+    "config",
+    "configuration",
+    "secrets"
+  ]
+}
