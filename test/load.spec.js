@@ -1,6 +1,6 @@
 import path from 'node:path';
 import { expect } from 'chai';
-import { CooperError } from 'cooper';
+import { CooperError } from '@joetjen/cooper';
 import { load, all, get, CooperConfigError } from '../src/cooper-config.js';
 import { projectRoot, configFile } from '../src/project.cjs';
 import { HEADER, project, write, cleanup, hermetic } from './support/project.js';

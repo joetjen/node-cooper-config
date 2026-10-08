@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+Published as **`@joetjen/cooper-config`**, beside `@joetjen/cooper`.
+
 ### Added
 
 - Project scaffold mirroring `node-cooper`: `package.json` (Node.js 20+,
@@ -22,7 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   `.env.<env>` one is named by `COOPER_ENV`: `.env.dev`, `.env.prod`). An unknown option is
   a `TypeError`. A missing
   default file is an empty configuration. A failed load stores nothing.
-- `cooper-config/register`, a preload entry for `--import`/`--require`
+- `@joetjen/cooper-config/register`, a preload entry for `--import`/`--require`
   that calls `load()` with defaults and exits with code 1 and the error's
   message on failure.
 - `get`, `require`, `has` and `all`, which read by a dotted path or an

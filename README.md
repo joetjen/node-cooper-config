@@ -33,8 +33,8 @@ import "${COOPER_ENV}/*.casc"
 ```
 
 ```js
-import 'cooper-config/register';            // loads config/config.casc, once
-import { get, require } from 'cooper-config';
+import '@joetjen/cooper-config/register';            // loads config/config.casc, once
+import { get, require } from '@joetjen/cooper-config';
 
 get('server.port');                          // 8080
 get('server.timeout');                       // 30000 (milliseconds)
@@ -46,26 +46,26 @@ get('database.pool.size', 5);                // 10, or 5 if absent
 ## Install
 
 ```sh
-npm install cooper-config
+npm install @joetjen/cooper-config
 ```
 
 `cooper` comes along as a dependency. You need Node.js 20 or later.
-`require('cooper-config')` works the same way as `import`.
+`require('@joetjen/cooper-config')` works the same way as `import`.
 
 ## Startup: loaded once, eagerly
 
 Load the configuration before anything reads it. Either preload it:
 
 ```sh
-node --import cooper-config/register app.js     # ES modules
-node --require cooper-config/register app.js    # CommonJS
+node --import @joetjen/cooper-config/register app.js     # ES modules
+node --require @joetjen/cooper-config/register app.js    # CommonJS
 ```
 
-or import `cooper-config/register` as the first line of your entry
+or import `@joetjen/cooper-config/register` as the first line of your entry
 point, or call `load()` yourself when you need options:
 
 ```js
-import { load } from 'cooper-config';
+import { load } from '@joetjen/cooper-config';
 
 load({ modules: { 'Acme.Secret': Secret } });
 ```
@@ -137,7 +137,7 @@ A load error is a `CooperConfigError`. It has the following fields:
 ## Reading
 
 ```js
-import { get, require, has, all } from 'cooper-config';
+import { get, require, has, all } from '@joetjen/cooper-config';
 ```
 
 | | |

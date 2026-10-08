@@ -9,7 +9,7 @@
 
 const fs = require('node:fs');
 const path = require('node:path');
-const { loadFileSync, CooperError } = require('cooper');
+const { loadFileSync, CooperError } = require('@joetjen/cooper');
 const CooperConfigError = require('./error.cjs');
 const { parse } = require('./options.cjs');
 const { projectRoot, configFile } = require('./project.cjs');

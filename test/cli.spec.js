@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { expect } from 'chai';
-import { loadFileSync } from 'cooper';
+import { loadFileSync } from '@joetjen/cooper';
 import { main } from '../src/cli.cjs';
 import { HEADER, PACKAGE_ROOT, project, cleanup } from './support/project.js';
 

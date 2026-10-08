@@ -32,7 +32,7 @@
  * configuration the application reads cannot be changed under it.
  */
 
-const { Secret, ByteSize, Duration, IPv4, IPv6, Tuple } = require('cooper');
+const { Secret, ByteSize, Duration, IPv4, IPv6, Tuple } = require('@joetjen/cooper');
 const CooperConfigError = require('./error.cjs');
 const { POLICY_KEY, REVEAL, policyOf } = require('./secrets.cjs');
 const { isBlock } = require('./key-path.cjs');

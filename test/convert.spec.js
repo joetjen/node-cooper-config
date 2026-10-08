@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import fc from 'fast-check';
-import { loadStringSync, ByteSize, Duration, IPv4, IPv6, Tuple, LocalDate, ModuleRef } from 'cooper';
+import { loadStringSync, ByteSize, Duration, IPv4, IPv6, Tuple, LocalDate, ModuleRef } from '@joetjen/cooper';
 import { convert, CooperConfigError } from '../src/cooper-config.js';
 import { HEADER } from './support/project.js';
 

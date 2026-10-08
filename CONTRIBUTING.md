@@ -26,7 +26,7 @@ in its own right.
 - `src/cooper-config.{cjs,js}`: the public API (`load`, `get`,
   `require`, `has`, `all`, `convert`, `CooperConfigError`, `version`)
   and the process-wide store.
-- `src/register.{cjs,js}`: the `cooper-config/register` preload entry.
+- `src/register.{cjs,js}`: the `@joetjen/cooper-config/register` preload entry.
 - `src/read.cjs`: finding, loading and converting the file. Everything
   `load()` does except storing the result.
 - `src/project.cjs`: the project root and the default file.

@@ -1,8 +1,8 @@
 'use strict';
 
 /**
- * @fileoverview The preload entry: `node --import cooper-config/register`
- * (or `--require`, or `import 'cooper-config/register'` as the
+ * @fileoverview The preload entry: `node --import @joetjen/cooper-config/register`
+ * (or `--require`, or `import '@joetjen/cooper-config/register'` as the
  * application's first import) runs `load()` with its defaults before the
  * application's own code.
  *

@@ -162,7 +162,7 @@ describe('reading before load()', () => {
       expect(run.status, run.stderr).to.equal(0);
       expect(run.stdout).to.match(/^CooperConfigError: /);
       expect(run.stdout).to.include('load()');
-      expect(run.stdout).to.include('cooper-config/register');
+      expect(run.stdout).to.include('@joetjen/cooper-config/register');
     });
   }
 });
