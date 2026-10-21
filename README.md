@@ -1,5 +1,11 @@
 # cooper-config
 
+> [!WARNING]
+> **Under heavy development: not for production use before `1.0.0`.**
+> Things can and will break, and the specification can and will change,
+> between any two releases until `1.0.0`. Do not use this library in a
+> production system yet.
+
 cooper-config loads your application's [CASC](https://github.com/joetjen/cooper/blob/main/guides/casc/CASC.md)
 configuration once, at startup, with [`cooper`](https://github.com/joetjen/node-cooper),
 and gives the rest of the program four functions to read it with.
